@@ -1,0 +1,71 @@
+@import './mixins';
+
+.video {
+    height: 720px;
+    position: relative;
+    overflow: hidden;
+    &__player {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+    }
+    &__main-content {
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        padding-bottom: 82px;
+    }
+    &__content {
+        text-align: $text-align;
+        color: #ffffff;
+        h2 {
+            font-style: $font-italic;
+            line-height: 1.01;
+            padding-bottom: 30px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.4;
+            padding-bottom: 40px;
+        }
+    }
+    &__main-content>*:not(.video--bg) {
+        z-index: 7;
+    }
+    &__play {
+        background: linear-gradient(131.99deg, #3DBDB6 5.64%, #0089CE 100%);
+        border-radius: 50%;
+        padding: 22px 22px 22px 28px;
+    }
+    &__play:focus {
+        opacity: 0;
+    }
+    &__play:focus + &--bg {
+        opacity: 0;
+    }
+    &--bg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        z-index: 5;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, .5);
+        }
+        img {
+            width: 100%;
+        }
+    }
+}

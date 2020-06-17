@@ -1,0 +1,22 @@
+@import './mixins';
+
+.about {
+    text-align: $text-align;
+    padding-top: 88px;
+    padding-bottom: 80px;
+    &__item-wraper {
+        @include flex-container(center, center);
+        padding-top: 70px;
+    }
+    &__item {
+        p {
+            padding: 30px 0 24px;
+        }
+        a {
+            @extend %learn-more;
+        }
+        &:not(:last-child) {
+            margin-right: 24px;
+        }    
+    }
+}

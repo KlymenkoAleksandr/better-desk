@@ -1,0 +1,105 @@
+.timeline {
+    padding: 28px 30px 12px 34px;
+    position: relative;
+    font-family: 'Open Sans', 'sans-serif';
+    &::before {
+        content: '';
+        position: absolute;
+        top: 28px;
+        right: 12px;
+        width: 6px;
+        background-color: #E9EDF2;
+        border-radius: 5px;
+        height: 54%;
+    }
+    &__item {
+        @include flex-container(space-between, center);
+        padding-left: 40px;
+        padding-bottom: 24px;
+        position: relative;
+        // &:first-child {
+        //     opacity: 0.6;
+        // }
+        &::before, &::after {
+            content: '';
+            position: absolute;
+        }
+        &::before {
+            left: 0;
+            top: 6px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+        }
+        &:not(:last-child)::after {
+            top: 20px;
+            left: 6px;
+            width: 1px;
+            height: 100%;
+        }
+        label {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        &__block {
+            text-align: left;
+            span {
+                font-weight: 300;
+                font-size: 15px;
+                line-height: 1.65;
+                color: #54657E;
+            }
+            p {
+                font-size: 16px;
+                line-height: 1.55;
+                color: #606D78;
+                span {
+                    font-weight: 600;
+                }    
+            }
+        }
+        &:first-child::before, &:first-child::after {
+            background-color: #E9EDF2;
+        }
+        &:nth-child(2)::before, &:nth-child(2)::after {
+            background-color: #F5474A;
+        }
+        &:nth-child(3)::before, &:nth-child(3)::after {
+            background-color: #F38428;
+        }
+        &:nth-child(4)::before {
+            background-color: #F38428;
+        }
+        &:nth-child(4)::after, &:last-child::before {
+            background-color: #20BBEF;
+        }
+        [type="checkbox"] {
+            display: none;
+            &:checked ~ .fake-checkbox {
+                border: 2px solid #DADFE5;
+                &::before {
+                    display: block;
+                }
+            }
+            &:checked ~ .timeline__item__block {
+                text-decoration: line-through;
+                opacity: .6;
+            }
+        }
+        .fake-checkbox {
+            width: 32px;
+            height: 32px;
+            border: 2px solid #20BBEF;
+            border-radius: 50%;
+            position: relative;
+            &::before {
+                content: '✓';
+                position: absolute;
+                top: 26%;
+                left: 34%;
+                display: none;
+            }
+        }
+    }
+}

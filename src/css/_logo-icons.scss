@@ -1,0 +1,13 @@
+@import './mixins';
+
+
+.logos {
+    background: #F9FAFA;
+    border: 1px solid #EEEEEE;
+    padding: 38px 6px;
+
+    &-wraper {
+        @extend %small-container;
+        @include flex-container(space-around, center)
+    }
+}

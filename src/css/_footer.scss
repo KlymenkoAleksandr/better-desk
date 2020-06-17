@@ -1,0 +1,65 @@
+@import './mixins';
+
+.footer {
+    padding: 72px 278px  32px 266px;
+    color: #ffffff;
+    background-color: #1F2532;
+    display: flex;
+    p, ul {
+        opacity: 0.6;
+        font-style: italic;
+        font-size: 12px;
+    }
+    p {
+        line-height: 1.55;
+    }
+    ul {
+        line-height: 2.1;
+    }
+    &__logo {
+        padding-right: 108px;
+    }
+    h6 {
+        padding-bottom: 18px;
+    }
+    a {
+        @extend %no-decoration-link;
+        color: #ffffff;
+    }
+    &__about {
+        padding-right: 94px;
+    }
+    &__support {
+        padding-right: 70px;
+        h6 {
+            font-family: 'Open Sans';
+        }
+    }
+    &__contact {
+        padding-right: 146px;
+    }
+    img {
+        width: 74px;
+        height: 16px;
+    }
+}
+
+.logo-wraper {
+    display: flex;
+    padding-bottom: 14px;
+}
+
+footer {
+    color: #ffffff;
+    text-align: center;
+    font-size: 12px;
+    line-height: 2;
+    font-style: $font-italic;
+    background-color: #3E3E58;
+    padding: 38px 0 34px 0;
+    p {
+        span {
+            text-decoration: underline;
+        }
+    }
+}
